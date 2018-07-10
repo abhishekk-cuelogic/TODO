@@ -16,6 +16,11 @@ var users=JSON.parse(localStorage.getItem('users'));
           break;
       }
   }
+
+  if(i == users.length)
+  {
+      alert("Invalid Username or Password");
+  }
    
    
     
