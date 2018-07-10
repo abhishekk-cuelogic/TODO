@@ -3,6 +3,7 @@
     var lname= document.getElementById('lname');
     var address= document.getElementById('address');
     var pwd= document.getElementById('pwd');
+    var gender=document.getElementById('gender');
 
 
 
@@ -72,8 +73,35 @@ function validate(){
 
 }
 
+
+
 function store(){
-  alert(email.value);
+  var users=[];
+
+  var obj={
+    EMAIL:email.value,
+    FNAME:fname.value,
+    LNAME:lname.value,
+    GENDER:gender.value,
+    ADDRESS:address.value,
+    PWD:pwd.value,
+  }
+  
+  val=JSON.parse(localStorage.getItem("users"));
+  if(val == null)
+  {
+    users.push(obj);
+  }
+  else
+  {
+    users=val;
+    users.push(obj);
+  }
+ 
+  localStorage.setItem("users",JSON.stringify(users));
+  alert("Registration Successful!!!");
+  
+
 }
 
 document.getElementById('btnreg').addEventListener('click',function(){
