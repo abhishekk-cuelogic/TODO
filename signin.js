@@ -1,8 +1,7 @@
-
 function signin(){
-
 var email=document.getElementById('email');
 var pwd=document.getElementById('pwd');
+
 
 
 
@@ -12,7 +11,10 @@ var users=JSON.parse(localStorage.getItem('users'));
   {
       if((email.value == users[i].EMAIL) && (pwd.value == users[i].PWD))
       {
+          localStorage.setItem("id",i);
+          window.location.href="list.html";
           alert("Login Successful!!!");
+          event.preventDefault();
           break;
       }
   }
@@ -20,8 +22,6 @@ var users=JSON.parse(localStorage.getItem('users'));
   if(i == users.length)
   {
       alert("Invalid Username or Password");
-  }
-   
-   
-    
+  } 
 }
+

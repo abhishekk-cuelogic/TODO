@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>List</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="list.css">
+   
+</head>
+<body>
+    <div class="navbar navbar-default">
+            <div class="btn btn-primary navbar-right navbtn"><a href="signin.html">LogOut</a></div>   
+            <div class="btn btn-primary navbar-right navbtn">Profile</div>
+            <h1 class="navbar-left" id="name"></h1>
+    </div>
+    
+    <div class="container">
+        <div class="col-lg-4">
+            <div class="well wel">
+                <h1>Select Date</h1>
+                <input type="date" id="date">
+            </div>   
+        </div>
+        <div class="col-lg-4">
+            <div class="well wel">
+                    <h1>Write Note</h1>
+                    <textarea id="note" value="reset" cols="30" rows="5" style="resize:none;"></textarea>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="well wel">
+                    <button class="btn btn-primary btn-block" onclick="addList()">ADD</button>
+            </div>       
+        </div>
+    </div>
+
+    <div class="container" id="list">
+        <div class="col-lg-2 text-center well head">
+            <h4>Date</h4>
+        </div>
+        <div class="col-lg-8 text-center well head">
+            <h4>Task</h4>
+        </div>
+        <div class="col-lg-2 well head">
+            
+        </div>
+    </div>
+
+    <script src="list.js" type="text/javascript"></script>
+</body>
+</html>
