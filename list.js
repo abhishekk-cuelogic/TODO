@@ -2,7 +2,7 @@ window.onload=function(){
     var id=parseInt(localStorage.getItem("id"));
     var user=JSON.parse(localStorage.getItem("users"));
     document.getElementById('name').innerHTML=user[id].FNAME+" "+user[id].LNAME;
-   // alert("Welcome"+user[id].FNAME);
+    //alert("Welcome"+user[id].FNAME);
 }
 
 function addList()
@@ -38,5 +38,7 @@ function addList()
     div.appendChild(but);
 
     d.appendChild(div);
+
+    note.value="";
 
 }

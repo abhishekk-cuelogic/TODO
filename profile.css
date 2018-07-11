@@ -1,0 +1,12 @@
+h1{
+    font-weight:bold;
+}
+
+#back{
+    margin: 20px;
+}
+
+#back a{
+    text-decoration: none;
+    color:white;
+}
