@@ -85,6 +85,7 @@ function store(){
     GENDER:gender.value,
     ADDRESS:address.value,
     PWD:pwd.value,
+    TODO:[]
   }
   
   val=JSON.parse(localStorage.getItem("users"));

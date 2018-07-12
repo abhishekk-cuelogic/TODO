@@ -15,6 +15,7 @@
 
 .wel{
     height:200px;
+    background-color: #a2c73c;
 }
 
 .wel h1{
@@ -22,14 +23,12 @@
 }
 
 .wel button{
-    margin-top:70px;
-    width:150px;
-    margin-left: 85px;
+    width:100px;
+    margin-top:40px;
 }
 
 .head{
     height:70px;
 }
-
 
 

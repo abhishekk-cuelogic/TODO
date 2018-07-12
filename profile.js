@@ -33,4 +33,17 @@ function save(){
     gender.disabled=true;
     address.disabled=true;
     pwd.disabled=true;
+    event.preventDefault();
+
+    var obj={
+        EMAIL:email.value,
+        FNAME:fname.value,
+        LNAME:lname.value,
+        GENDER:gender.value,
+        ADDRESS:address.value,
+        PWD:pwd.value,
+      }
+      user.splice(id,1,obj);
+      localStorage.setItem("users",JSON.stringify(user));
+      alert("Updated Successfully!!");
 }
