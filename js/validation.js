@@ -4,6 +4,7 @@
     var address= document.getElementById('address');
     var pwd= document.getElementById('pwd');
     var gender=document.getElementById('gender');
+    var img=document.getElementById('img');
 
 
 
@@ -77,7 +78,7 @@ function validate(){
 
 function store(){
   var users=[];
-
+  var imgdata=getBase64Image(img);
   var obj={
     EMAIL:email.value,
     FNAME:fname.value,
@@ -85,6 +86,7 @@ function store(){
     GENDER:gender.value,
     ADDRESS:address.value,
     PWD:pwd.value,
+    IMG:imgdata,
     TODO:[]
   }
   

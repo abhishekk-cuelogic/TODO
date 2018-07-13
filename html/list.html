@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="list.css">
+    <link rel="stylesheet" href="../css/list.css">
    
 </head>
 <body>
     <div class="navbar navbar-default">
-            <div class="btn btn-primary navbar-right navbtn"><a href="signin.html">LogOut</a></div>   
-            <div class="btn btn-primary navbar-right navbtn"><a href="profile.html">Profile</a></div>
+            <div class="btn btn-primary navbar-right navbtn"><a href="../html/signin.html">LogOut</a></div>   
+            <div class="btn btn-primary navbar-right navbtn"><a href="../html/profile.html">Profile</a></div>
             <h1 class="navbar-left" id="name"></h1>
     </div>
     
@@ -22,7 +22,7 @@
         <div class="col-lg-3">
             <div class="well wel">
                 <h1>Select Date</h1>
-                <input type="date" id="date">
+                <input type="date" id="date" class="btn btn-primary">
             </div>   
         </div>
         <div class="col-lg-3">
@@ -34,7 +34,7 @@
         <div class="col-lg-3">
             <div class="well wel">
                    <h1>Catagory</h1>
-                    <select id="catagory">
+                    <select id="catagory" class="btn btn-primary">
                     <option>Personal</option>
                     <option>Office</option>
                     <option>Social</option>
@@ -47,7 +47,7 @@
                     <label><input type="checkbox" id="rem" onclick="setReminder()">Reminder</label>
                     <label><input type="checkbox" id="pub">Public</label>
                 </div>
-                <input type="date" id="remdate" disabled>
+                <input type="date" id="remdate" class="btn btn-primary" disabled>
                 <button class="btn btn-primary" onclick="addList()">ADD</button>
                 <button class="btn btn-primary" onclick="deleteSelected()">DELETE</button>
             </div>       
@@ -78,6 +78,6 @@
         </div>
     </div>
 
-    <script src="list.js" type="text/javascript"></script>
+    <script src="../js/list.js" type="text/javascript"></script>
 </body>
 </html>

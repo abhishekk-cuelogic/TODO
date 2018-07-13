@@ -13,7 +13,7 @@ function addList()
     var public=document.getElementById('pub');
     var remdate=document.getElementById('remdate');
 
-    if((note.value == '') || (date.value == '') || (remdate.value == ''))
+    if((note.value == '') || (date.value == ''))
     {
         alert("plese enter all info ");
         return;
@@ -150,6 +150,7 @@ function store(date,note,check,public,remdate){
 
 
 function display(id,user){
+    //alert(user[id].TODO.length);
     var len=user[id].TODO.length;
 
     for(var i=0;i<len;i++){
@@ -254,16 +255,20 @@ function deleteSelected(){
 
     //alert(user[id].TODO[i].DELETE);
 
-   for(var i=0;i<len;i++)
+   for(var i=len-1;i>=0;i--)
     {
+        var user=JSON.parse(localStorage.getItem("users"));
         if(user[id].TODO[i].DELETE == true)
         {
+            //user=JSON.parse(localStorage.getItem("users"));
             user[id].TODO.splice(i,1);
+            localStorage.setItem("users",JSON.stringify(user));
            
         }
-        localStorage.setItem("users",JSON.stringify(user));
-        alert("done");
+        
+        //alert("done");
     }
+   location.reload();
 }
     
 

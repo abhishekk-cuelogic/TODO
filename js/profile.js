@@ -6,6 +6,7 @@ var lname=document.getElementById('lname');
 var gender= document.getElementById('gender');
 var address=document.getElementById('address');
 var pwd=document.getElementById('pwd');
+var todo=user[id].TODO;
 
 window.onload=function(){    
     email.value=user[id].EMAIL;
@@ -42,6 +43,7 @@ function save(){
         GENDER:gender.value,
         ADDRESS:address.value,
         PWD:pwd.value,
+        TODO:todo
       }
       user.splice(id,1,obj);
       localStorage.setItem("users",JSON.stringify(user));
