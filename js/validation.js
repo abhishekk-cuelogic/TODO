@@ -4,7 +4,6 @@
     var address= document.getElementById('address');
     var pwd= document.getElementById('pwd');
     var gender=document.getElementById('gender');
-    var img=document.getElementById('img');
 
 
 
@@ -78,7 +77,8 @@ function validate(){
 
 function store(){
   var users=[];
-  var imgdata=getBase64Image(img);
+  var img=localStorage.getItem("img");
+  localStorage.removeItem("img");
   var obj={
     EMAIL:email.value,
     FNAME:fname.value,
@@ -86,7 +86,7 @@ function store(){
     GENDER:gender.value,
     ADDRESS:address.value,
     PWD:pwd.value,
-    IMG:imgdata,
+    IMG:img,
     TODO:[]
   }
   
@@ -103,7 +103,7 @@ function store(){
  
   localStorage.setItem("users",JSON.stringify(users));
   alert("Registration Successful!!!");
-  
+  location.reload();
 
 }
 
@@ -117,3 +117,17 @@ document.getElementById('btnreg').addEventListener('click',function(){
 
 },false);
 
+
+var input=document.getElementById('img');
+
+input.addEventListener('change',function(e){
+  console.log(input.files);
+  var reader=new FileReader();
+  reader.onload=function()
+  {
+    var img=new Image();
+    img.src=reader.result;
+    localStorage.setItem("img",img.src);
+  }
+  reader.readAsDataURL(input.files[0])
+})

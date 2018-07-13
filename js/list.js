@@ -2,6 +2,14 @@ window.onload=function(){
     var id=parseInt(localStorage.getItem("id"));
     var user=JSON.parse(localStorage.getItem("users"));
     document.getElementById('name').innerHTML=user[id].FNAME+" "+user[id].LNAME;
+    var img=user[id].IMG;
+    var userimg = document.createElement("IMG");
+    userimg.classList.add("img-rounded");
+    userimg.width=100;
+    //userimg.height=100;
+    userimg.src = img;
+    var div=document.getElementById('userimg');
+    div.appendChild(userimg);
     display(id,user);
 }
 
