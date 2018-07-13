@@ -7,6 +7,8 @@ var gender= document.getElementById('gender');
 var address=document.getElementById('address');
 var pwd=document.getElementById('pwd');
 var todo=user[id].TODO;
+var img=user[id].IMG
+localStorage.setItem("img",img);
 
 window.onload=function(){    
     email.value=user[id].EMAIL;
@@ -24,6 +26,7 @@ function edit(){
     gender.disabled=false;
     address.disabled=false;
     pwd.disabled=false;
+    document.getElementById('img').disabled=false;
     event.preventDefault()
 }
 
@@ -43,9 +46,25 @@ function save(){
         GENDER:gender.value,
         ADDRESS:address.value,
         PWD:pwd.value,
+        IMG:localStorage.getItem("img"),
         TODO:todo
       }
+      localStorage.removeItem("img");
       user.splice(id,1,obj);
       localStorage.setItem("users",JSON.stringify(user));
       alert("Updated Successfully!!");
 }
+
+var input=document.getElementById('img');
+
+input.addEventListener('change',function(e){
+  console.log(input.files);
+  var reader=new FileReader();
+  reader.onload=function()
+  {
+    var img=new Image();
+    img.src=reader.result;
+    localStorage.setItem("img",img.src);
+  }
+  reader.readAsDataURL(input.files[0])
+})
